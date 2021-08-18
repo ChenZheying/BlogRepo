@@ -4,8 +4,12 @@ title: Python学习笔记02-列表
 date: 2021-05-02 06:49:56
 tags: [编程语言]
 toc: true
+index_img: /img/python.jpeg
 categories: Python学习
 ---
+
+<escape><!-- more --></escape>
+
 - 列表是有序集合（可随机访问）。
 - 索引为-1，表示列表的最后一个元素。
 - `some_list.append(some_value)`：在列表末尾添加元素。

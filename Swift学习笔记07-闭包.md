@@ -3,6 +3,7 @@ title: Swift学习笔记07-闭包
 toc: true
 date: 2020-12-04 07:04:52
 tags: [编程语言]
+index_img: /img/swift.jpg
 categories: Swift学习
 ---
 Swift函数学习笔记，包括[闭包表达式](#expression)、[尾随闭包](#4)、[值捕获](#valueCapture)、[逃逸闭包](#escapingClosure)。

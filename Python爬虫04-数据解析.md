@@ -3,6 +3,7 @@ title: Python爬虫04-数据解析
 toc: true
 date: 2020-12-03 14:37:26
 tags: 正则表达式
+index_img: /img/spider_man.png
 categories: Python爬虫
 ---
 在聚焦爬虫（爬取页面中指定的页面内容）中，可以先将整张页面爬取，再进行数据解析。数据解析可以通过正则表达式、bs4、**xpath**三种方法实现。

@@ -4,8 +4,12 @@ title: Python学习笔记01-简单数据类型
 date: 2021-04-30 07:57:26
 tags: [编程语言]
 toc: true
+index_img: /img/python.jpeg
 categories: Python学习
 ---
+
+<escape><!-- more --></escape>
+
 |语法|作用|示例|
 |:-:|:-:|:-:|
 |title()|获得字符串将每个单词的**仅**首字母大写的字符串|`full_name.title()` 'adA loveLace' -> 'Ada Lovelace'|

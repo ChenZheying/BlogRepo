@@ -4,6 +4,7 @@ date: 2020-11-10 11:01:07
 tags: [编程语言]
 toc: true
 categories: Swift学习
+index_img: /img/swift.jpg
 ---
 初学Swift，记录一些以前没见到过的功能用法
 <!--more-->

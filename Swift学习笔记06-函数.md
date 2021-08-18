@@ -3,6 +3,7 @@ title: Swift学习笔记06-函数
 toc: true
 categories: Swift学习
 date: 2020-12-03 07:32:16
+index_img: /img/swift.jpg
 tags: [编程语言]
 ---
 Swift函数学习笔记，包括[函数的定义与调用](#define)、[函数参数与返回值](#parameter)、[函数参数标签和参数名称](#label)、[函数类型](#type)、[嵌套函数](#nest)。

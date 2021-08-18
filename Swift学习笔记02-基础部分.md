@@ -3,6 +3,7 @@ title: Swift学习笔记02-基础部分
 date: 2020-11-19 17:27:00
 tags: [编程语言]
 toc: true
+index_img: /img/swift.jpg
 categories: Swift学习
 ---
 Swift基础部分学习笔记，包括常量和变量、分号、整数和浮点数、类型别名、布尔值、元组、可选类型、断言和先决条件、基本运算符

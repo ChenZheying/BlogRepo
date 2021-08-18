@@ -3,6 +3,7 @@ layout: post
 title: Python爬虫05-验证码识别 & coockie & 代理ip
 date: 2021-02-19 10:16:06
 tags:
+index_img: /img/spider_man.png
 categories: Python爬虫
 ---
 爬虫中的验证码自动识别、coockie、代理ip。

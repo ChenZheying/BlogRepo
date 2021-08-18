@@ -3,6 +3,7 @@ title: Swift学习笔记05-控制流
 date: 2020-12-01 09:05:16
 tags: [编程语言]
 toc: true
+index_img: /img/swift.jpg
 categories: Swift学习
 ---
 Swift控制流学习笔记，包括[循环语句](#cycle)、[条件语句](#condition)、[控制转移语句](#control)、[提前退出（guard）](#guard)、[检测API可用性](#API)。

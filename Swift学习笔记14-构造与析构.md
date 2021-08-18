@@ -3,6 +3,7 @@ layout: post
 title: Swift学习笔记14-构造与析构
 date: 2021-04-15 20:11:53
 categories: Swift学习
+index_img: /img/swift.jpg
 toc: true
 ---
 Swift[构造](#构造)和[析构](#析构)学习笔记。

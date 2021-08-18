@@ -4,6 +4,7 @@ title: Swift学习笔记12-下标
 date: 2021-04-14 07:36:41
 tags: [编程语言]
 categories: Swift学习
+index_img: /img/swift.jpg
 toc: true
 ---
 Swift下标学习笔记，包括[下标语法](#下标语法)和[类型下标](#类型下标)。

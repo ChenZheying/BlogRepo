@@ -2,6 +2,7 @@
 title: Python爬虫01-爬虫简介
 date: 2020-12-01 14:51:05
 tags:
+index_img: /img/spider_man.png
 categories: Python爬虫
 ---
 <!--more-->

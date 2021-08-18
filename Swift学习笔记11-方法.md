@@ -4,6 +4,7 @@ title: Swift学习笔记11-方法
 date: 2021-03-10 09:37:12
 tags: [编程语言]
 categories: Swift学习
+index_img: /img/swift.jpg
 toc: true
 ---
 *方法*是与某些特定类型相关联的[**函数**](https://chenzheying.gitee.io/2020/12/03/Swift学习笔记06-函数/)。  

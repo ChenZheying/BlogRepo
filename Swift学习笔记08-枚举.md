@@ -3,6 +3,7 @@ title: Swift学习笔记08-枚举
 date: 2020-12-05 09:05:16
 tags: [编程语言]
 toc: true
+index_img: /img/swift.jpg
 categories: Swift学习
 ---
 Swift枚举学习笔记，包括[枚举语法](#grammar)、[关联值](#associatedValue)、[原始值](#originalValue)、[递归枚举](#recursiveEnum)。

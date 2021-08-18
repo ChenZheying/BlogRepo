@@ -3,6 +3,7 @@ title: Python爬虫03-requests模块
 date: 2020-12-01 15:36:24
 tags:
 categories: Python爬虫
+index_img: /img/spider_man.png
 toc: true
 ---
 requests模块: python中原生的一款基于网络请求的模块，功能强大、简单便捷、效率高。  

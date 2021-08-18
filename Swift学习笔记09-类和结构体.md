@@ -3,6 +3,7 @@ title: Swift学习笔记09-类和结构体
 date: 2020-12-10 17:13:05
 tags: [编程语言]
 toc: true
+index_img: /img/swift.jpg
 categories: Swift学习
 ---
 Swift类和结构体部分学习笔记，包括[类和结构体可实现功能的比较](#comparision)、[类和结构体定义](#define)、[类和结构体的实例化](#instantiation)、[值类型——引用类型](#valueTypeReferenceType)。

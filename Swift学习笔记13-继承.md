@@ -4,6 +4,7 @@ title: Swift学习笔记13-继承
 date: 2021-04-15 09:51:04
 tags: [编程语言]
 categories: Swift学习
+index_img: /img/swift.jpg
 toc: true
 ---
 Swift继承学习笔记，包括[基类](#基类)和[重写](#重写)。

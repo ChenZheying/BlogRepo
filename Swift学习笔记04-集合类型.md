@@ -3,6 +3,7 @@ title: Swift学习笔记04-集合类型
 date: 2020-11-25 18:55:29
 tags: [编程语言]
 toc: true
+index_img: /img/swift.jpg
 categories: Swift学习
 ---
 Swift集合类型学习笔记，包括数组（Array）、集合（Set）、字典（Dictionary）。
