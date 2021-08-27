@@ -135,7 +135,7 @@ categories: C++
         //a.cpp
         extern const int bufsize = 100;
         ```
-    2. 在`main.cpp`中声明并使用变量`non_const_header`
+    2. 在`main.cpp`中声明并使用变量`bufsize`
         ```cpp
         #include <iostream>
         int main() {

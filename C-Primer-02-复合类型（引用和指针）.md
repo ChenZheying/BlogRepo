@@ -4,7 +4,7 @@ toc: true
 date: 2021-07-26 15:46:32
 tags:
 index_img:
-categories:
+categories: C++
 ---
 复合类型是区别于基本类型的其他类型，引用和指针都属于复合类型。
 
