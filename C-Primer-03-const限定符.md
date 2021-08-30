@@ -1,12 +1,12 @@
 ---
-title: C++Primer-03-const限定符
+title: C++Primer_03_const限定符
 toc: true
 date: 2021-07-29 15:11:30
 tags:
-index_img:
+index_img: /img/c++primer.jpg
 categories: C++
 ---
-## const基础知识
+# const基础知识
 - const限定符用于定义**值不能改变**的变量——常量。
 - const对象创建之后值就不能改变，所以必须初始化。
 - 根据所赋初值方式的不同，const对象有两种初始化：编译时初始化和运行时初始化
@@ -15,68 +15,72 @@ categories: C++
   - 运行时初始化：`const int i = get_size()`
 - 为了实现const对象的编译初始化，const对象被设定为尽在文件内有效，想要跨文件使用时，可以[利用`extern`关键字]()。
 
-## const与复合类型
+# const与复合类型
 const可以与复合类型（引用和指针）结合。  
 由于const使用来创建一个值不能改变的变量对象，而引用并非一个对象，所以const与引用的结合只有一种 —— 对常量的引用。  
 而指针是一个对象，所以指针和const的结合有两种：常量指针（顶层const）和指向常量的指针（底层const）。
-### const与引用
+## const与引用
 绑定到const对象上的引用，简称常量引用。由于const对象不可以改变的特性，常量引用也不能用来改变const对象的值。  
-- 常量引用的声明方式：   
+
+常量引用的声明方式：   
   ```cpp
   const int i = 42;
   const int &r1 = i;
   ```
 
-- 一个常量引用可以进行绑定的情况有：
-  1. 常量引用绑定到同类型的常量上：  
-      ```cpp
-      const int i = 42;
-      const int &ri = i;
-      ```
-  2. 常量引用绑定到与其类型不同，但可以进行类型转换的常量上（`double` 绑 `int` / `int` 绑 `double`）：  
-    原则上来讲，引用必须绑定在一个与其类型一致的对象上，但是如果常量是可以转换为与引用一致的类型，编译器会自动帮忙利用中间变量进行*类型转换后的绑定*，即：  
-      ```cpp
-      const double dval = 3.14;
-      const int &ri = dval;
-      ```
-      会被编译器处理为：
-      ```cpp
-      const double dval = 3.14;
-      const int temp = dval;
-      const int &ri = temp;
-      ```
-      那么，常量引用`ri`实际上是被绑定到了一个与常量`dval`进行类型转换之后的值一样的临时量对象上。  
+一个常量引用可以进行绑定的情况有4种：
+1. 常量引用绑定到同类型的常量上：  
+    ```cpp
+    const int i = 42;
+    const int &ri = i;
+    ```
+2. 常量引用绑定到与其类型不同，但可以进行类型转换的常量上（`double` 绑 `int` / `int` 绑 `double`）：  
+    
+    原则上来讲，引用必须绑定在一个与其类型一致的对象上，但是，如果常量是可以转换为与引用一致的类型，编译器会自动帮忙利用中间变量进行*类型转换后的绑定*，即：  
+    ```cpp
+    const double dval = 3.14;
+    const int &ri = dval;
+    ```
+    会被编译器处理为：
+    ```cpp
+    const double dval = 3.14;
+    const int temp = dval;
+    const int &ri = temp;
+    ```
+    那么，常量引用`ri`实际上是被绑定到了一个与常量`dval`进行类型转换之后的值一样的临时常量对象上。  
 
-      <big>但是!!!</big>对变量以及变量引用进行同样的操作是非法的！
-      ```cpp
-      double dval = 3.14;
-      int &ri = dval;     
-      //error: non-const lvalue reference to type 'int' cannot bind to a value of unrelated type 'double'
-      ```
-      ![](c-Primer-03-const限定符/2021-08-27-20-55-56.png)  
-      常量这样操作合法而变量这样操作非法的原因是：
-      - 不论其绑定的是变量还是常量，常量引用并不能用于改变绑定对象的值，所以将其绑定到一个与欲绑定常/变量值相同的临时常量对象上并不会造成其他后果。
-      - 而变量引用可以且多用于改变绑定对象的值，而绑定到类型转换后的中间变量上会造成无法使用引用对欲绑定的变量进行值改变的操作。
+    <big>但是!!!</big>对变量以及变量引用进行同样的操作是非法的！
+    ```cpp
+    double dval = 3.14;
+    int &ri = dval;     
+    //error: non-const lvalue reference to type 'int' cannot bind to a value of unrelated type 'double'
+    ```
+    <img src="c-Primer-03-const限定符/2021-08-27-20-55-56.png" width="50%">  
 
-  3. 常量引用绑定到符合情况1或2的**变量**上
-      ```cpp
-      double dval = 3.14;
-      const int &ri = dval;
-      ```
+    常量这样操作合法而变量这样操作非法的原因是：
+    - 不论其绑定的是变量还是常量，常量引用并不能用于改变绑定对象的值，所以将其绑定到一个与欲绑定常/变量值相同的临时常量对象上并不会造成其他后果。
+    - 而变量引用可以且多用于改变绑定对象的值，而绑定到类型转换后的中间变量上会造成无法使用引用对欲绑定的变量进行值改变的操作。
 
-      同样的，由于变量引用可以用于改变其绑定对象的值，所以不可以将变量引用绑定到常量上
-      ```cpp
-      const int val = 3;
-      int &ri = val;
-      //error: binding reference of type 'int' to value of type 'const int' drops 'const' qualifier
-      ```
-      ![](c-Primer-03-const限定符/2021-08-27-21-29-48.png)
-  4. 常量引用绑定到运算结果符合1或2或3的一般表达式上
-      ```cpp
-      int i = 3;
-      const int &ri = i*3;
-      ```
+3. 常量引用绑定到符合情况1或2的**变量**上
+    ```cpp
+    double dval = 3.14;
+    const int &ri = dval;
+    ```
 
-### const与指针
+    同样的，由于变量引用可以用于改变其绑定对象的值，所以不可以将变量引用绑定到常量上
+    ```cpp
+    const int val = 3;
+    int &ri = val;
+    //error: binding reference of type 'int' to value of type 'const int' drops 'const' qualifier
+    ```
+    <img src="c-Primer-03-const限定符/2021-08-27-21-29-48.png" width="50%">   
+
+4. 常量引用绑定到运算结果符合1或2或3的一般表达式上
+    ```cpp
+    int i = 3;
+    const int &ri = i*3;
+    ```
+
+## const与指针
 const与指针的结合有两种：常量指针（顶层const）和指向常量的指针（底层const）。
-#### 常量指针
+### 指向常量的指针

@@ -20,7 +20,6 @@ categories: Python爬虫
 ### robots.txt协议
 君子协议，网站声明出哪些数据可以被爬虫爬去，哪些数据不可以  
 例：IT之家的robots协议 https://www.ithome.com/robots.txt  
-<img src="Python爬虫01-爬虫简介/2020-12-01-15-01-54.png" width="50%">
 
 ## 教程网址
 https://book.apeland.cn/details/68/

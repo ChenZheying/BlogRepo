@@ -3,7 +3,7 @@ title: C++Primer_01_变量和基本类型
 toc: true
 date: 2021-07-22 16:41:39
 tags:
-index_img:
+index_img: /img/c++primer.jpg
 categories: C++
 ---
 ## 基本数据类型
