@@ -35,7 +35,7 @@ const可以与复合类型（引用和指针）结合。
     const int &ri = i;
     ```
 2. 常量引用绑定到与其类型不同，但可以进行类型转换的常量上（`double` 绑 `int` / `int` 绑 `double`）：  
-    
+   
     原则上来讲，引用必须绑定在一个与其类型一致的对象上，但是，如果常量是可以转换为与引用一致的类型，编译器会自动帮忙利用中间变量进行*类型转换后的绑定*，即：  
     ```cpp
     const double dval = 3.14;
@@ -104,6 +104,9 @@ constPtr = &num2;
 //error: cannot assign to variable 'constPtr' with const-qualified type 'int *const'
 ```
 
+
+
+
 # 常量表达式
 值不会改变并且在**编译过程**就能得到计算结果的表达式。如：字面值、用常量表达式初始化的const对象。
 - 值在编译过程中可以计算得到是很重要的一点，如：
@@ -115,8 +118,12 @@ constPtr = &num2;
     ```cpp
     constexpr int sz = get_size();
     ```
+
+
 ## constexpr与复合类型
 指针和引用都能定义成constexpr，但必须使用一个**固定的值**对其进行初始化
+
+
 ### constexpr指针
 constexpr指针可以用nullptr或0初始化
 ```cpp
@@ -125,23 +132,25 @@ constexpr int *ptr = nullptr;
 ```
 
 指针内存放的是其指向对象的地址，由于函数体内定义的变量并非存放在固定地址上，所以用变量对constexpr指针进行初始化时必须是位于与函数体之外的对象。
+- 使用位于函数体内的对象初始化报错：
+    ```cpp
+    int main() {
+        int num = 0;
+        constexpr int *ptr = &num;
+    }
+    // error: constexpr variable 'ptr' must be initialized by a constant expression
+    ```
+    ![](C-Primer-03-const限定符/2021-09-02-17-04-32.png)
 
-```cpp
-int main() {
+- 使用位于函数体外的对象初始化成功：
+    ```cpp
     int num = 0;
-    constexpr int *ptr = &num;
-}
-// error: constexpr variable 'ptr' must be initialized by a constant expression
-```
-![](C-Primer-03-const限定符/2021-09-02-17-04-32.png)
+    int main() {
+        constexpr int *ptr = &num;
+    }
+    ```
 
 
-```cpp
-int num = 0;
-int main() {
-    constexpr int *ptr = &num;
-}
-```
 
 ### constexpr引用
 引用要和对象绑定，所以constexpr引用只可以使用函数体之外的对象初始化。
@@ -151,3 +160,4 @@ int main() {
     constexpr int &ptr = num;
 }
 ```
+

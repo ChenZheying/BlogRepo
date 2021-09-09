@@ -42,6 +42,7 @@ categories: C++
 ### 字符/字符串字面值的前缀
 
 |前缀|适用类型|含义|
+|---|----|---|
 |`u`|`char16_t`|Unicode|
 |`U`|`char32_t`|Unicode|
 |`L`|`wchar_t`|宽字符|
