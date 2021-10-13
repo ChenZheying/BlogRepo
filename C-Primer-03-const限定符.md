@@ -84,7 +84,7 @@ const可以与复合类型（引用和指针）结合。
 ## const与指针
 const与指针的结合有两种：常量指针（顶层const）和指向常量的指针（底层const）。
 ### 指向常量的指针
-即**底层const**，只要求不能通过该指针改变对象的值，所谓的“指向常量”，是指针的一厢情愿，它自己认为自己指向的是常量，所以不去改变其值，其实也可以指向变量。
+即**底层const**，只要求不**能通过该指针改变对象的值**，所谓的“指向常量”，是指针的一厢情愿，它自己认为自己指向的是常量，所以不去改变其值，其实也可以指向变量。
 ```cpp
 //指向常量
 const double cdval = 3.14;
@@ -94,8 +94,15 @@ const double *ptr = &cdval;
 double dval = 3.14;
 ptr = &dval;
 ```
+从右到左原则：
+
+- `double *ptr`：           ptr是一个XXXXXXX的double型的指针
+
+- `const double *ptr`： ptr是一个指向常量的double型的指针
+
 ### 常量指针
-const指针，也叫做**顶层const**。指针本身是常量，初始化之后不可以再指向其他地址,但是可以用此指针改变指向对象的值。
+
+const指针，也叫做**顶层const**。**指针本身是常量**，初始化之后不可以再指向其他地址,但是可以用此指针改变指向对象的值。
 ```cpp
 int num = 0;
 int *const constPtr = &num;
@@ -104,7 +111,11 @@ constPtr = &num2;
 //error: cannot assign to variable 'constPtr' with const-qualified type 'int *const'
 ```
 
+从右到左原则：
 
+- `const constPtr`：         constPtr是一个XXXXXXXXXXXXXXX常量
+
+- `int *const constPtr`：constPtr是一个指向int型变量的指针常量
 
 
 # 常量表达式
